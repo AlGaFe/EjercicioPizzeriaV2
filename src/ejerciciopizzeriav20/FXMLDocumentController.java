@@ -9,12 +9,10 @@ import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.ResourceBundle;
-import java.util.Set;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,7 +25,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -402,81 +399,83 @@ public class FXMLDocumentController implements Initializable {
          doubleIngrediente =0.0;
         if (this.ingredienteAceitunas.isSelected()) {
             doubleIngrediente = doubleIngrediente + this.ingredientes.get("Aceitunas Negras");
-            stringIngrediente = "Aceitunas Negras";
+            this.seleccionIngredientes.appendText("Aceitunas Negras" + "\n");
         }
         if (this.ingredienteAnchoas.isSelected()) {
             doubleIngrediente = doubleIngrediente + this.ingredientes.get("Anchoas");
-            stringIngrediente = "Anchoas";
+            this.seleccionIngredientes.appendText("Anchoas" + "\n");
 
         }
         if (this.ingredienteAtun.isSelected()) {
             doubleIngrediente = doubleIngrediente + this.ingredientes.get("Atún");
-            stringIngrediente = "Atún";
+            this.seleccionIngredientes.appendText("Atún" + "\n");
 
         }
         if (this.ingredienteCeballo.isSelected()) {
             doubleIngrediente = doubleIngrediente + this.ingredientes.get("Cebolla");
-            stringIngrediente = "Cebolla";
+            this.seleccionIngredientes.appendText("Cebolla" + "\n");
 
         }
         if (this.ingredienteCebolla.isSelected()) {
             doubleIngrediente = doubleIngrediente + this.ingredientes.get("Cebolla Caramelizada");
-            stringIngrediente = "Cebolla Caramelizada";
+            this.seleccionIngredientes.appendText("Cebolla Caramelizada" + "\n");
 
         }
         if (this.ingredienteChampinon.isSelected()) {
             doubleIngrediente = doubleIngrediente + this.ingredientes.get("Champiñón");
-            stringIngrediente = "Champiñón";
+            this.seleccionIngredientes.appendText("Champiñón" + "\n");
 
         }
         if (this.ingredienteJamonS.isSelected()) {
             doubleIngrediente = doubleIngrediente + this.ingredientes.get("Jamón Serrano");
-            stringIngrediente = "Jamón Serrano";
+            this.seleccionIngredientes.appendText("Jamón Serrano" + "\n");
 
         }
         if (this.ingredienteJamonY.isSelected()) {
             doubleIngrediente = doubleIngrediente + this.ingredientes.get("Jamón de York");
-            stringIngrediente = "Jamón de York";
+            this.seleccionIngredientes.appendText("Jamón de York" + "\n");
 
         }
         if (this.ingredienteMaiz.isSelected()) {
             doubleIngrediente = doubleIngrediente + this.ingredientes.get("Maiz");
-            stringIngrediente = "Maiz";
+            this.seleccionIngredientes.appendText("Maiz" + "\n");
 
         }
         if (this.ingredientePepperoni.isSelected()) {
             doubleIngrediente = doubleIngrediente + this.ingredientes.get("Pepperoni");
-            stringIngrediente = "Pepperoni";
+            this.seleccionIngredientes.appendText("Pepperoni" + "\n");
 
         }
         if (this.ingredientePimientoV.isSelected()) {
             doubleIngrediente = doubleIngrediente + this.ingredientes.get("Pimiento Verde");
-            stringIngrediente = "Pimiento Verde";
+            this.seleccionIngredientes.appendText("Pimiento Verde" + "\n");
 
         }
         if (this.ingredienteTofu.isSelected()) {
             doubleIngrediente = doubleIngrediente + this.ingredientes.get("Tofu");
-            stringIngrediente = "Tofu";
+            this.seleccionIngredientes.appendText("Tofu" + "\n");
 
         }
         if (this.ingredienteTomate.isSelected()) {
             doubleIngrediente = doubleIngrediente + this.ingredientes.get("Tomate Natural");
-            stringIngrediente = "Tomate Natural";
+            this.seleccionIngredientes.appendText("Tomate Natural" + "\n");
 
         }
         if (this.ingredientebacon.isSelected()) {
             doubleIngrediente = doubleIngrediente + this.ingredientes.get("Bacon");
-            stringIngrediente = "Bacon";
+            this.seleccionIngredientes.appendText("Bacon" + "\n");
 
         }
         if (this.ingredientePollo.isSelected()) {
             doubleIngrediente = doubleIngrediente + this.ingredientes.get("Pollo a la Parrilla");
-            stringIngrediente = "Pollo a la Parrilla";
+            this.seleccionIngredientes.appendText("Pollo a la Parrilla" + "\n");
 
         }
         DecimalFormat formato = new DecimalFormat("0.00");
-        this.seleccionIngredientes.appendText(stringIngrediente + "\n");
+        
         this.precioIngredientes.setText(doubleIngrediente + "€");
+        this.seleccionIngredientes.appendText("\n");
+        this.seleccionIngredientes.appendText("\n");
         precioTotalDouble = (doublemasa + doublePizza + doubleIngrediente) * multiplicadorTamaño;
         this.precioTotal.setText(formato.format(this.precioTotalDouble) + "€");
 
